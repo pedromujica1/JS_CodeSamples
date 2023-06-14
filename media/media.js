@@ -5,7 +5,7 @@ const res2 = document.querySelector("h4");
 
 frm.addEventListener("submit",(e) => {
    
-    //Evista o envio do formulario
+    //Evita o envio do formulario
     e.preventDefault();
 
     //Obter os valores digitados
@@ -16,6 +16,7 @@ frm.addEventListener("submit",(e) => {
     //Calculo da média
     const media = (nota1+nota2)/2;
 
+    //Mostra a média no console para checagem
     console.log(media);
 
     resp1.innerText=`Média das Notas ${media.toFixed(2)}`;
