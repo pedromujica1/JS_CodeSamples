@@ -1,43 +1,4 @@
-/*function funcao_triangulo() 
-{
-    var invalorA = document.getElementById ("invalorA")
-    var invalorB = document.getElementById ("invalorB")
-    var invalorC = document.getElementById ("invalorC")
-    var tipo_triangulo = document.getElementById ("tipo_triangulo")
-
-    var valorA = Number (invalorA.value)
-    var valorB = Number (invalorB.value)
-    var valorC = Number (invalorC.value)
-
-    if (valorC < (valorA+valorB) && valorB < (valorA+valorC) && valorA < (valorB+valorC)) 
-    {
-        tipo_triangulo.textContent = "O triângulo pode ser formado"
-        
-        if (valorA == valorB && valorB == valorC) 
-        {
-            tipo_triangulo.textContent = "O triângulo é equilátero"
-
-        } 
-        
-        else if (valorA == valorB || valorA== valorC || valorC == valorB) 
-        
-        {
-            tipo_triangulo.textContent = "O triângulo é isósceles"
-            
-        } else 
-        {
-            tipo_triangulo.textContent = "O triângulo é escaleno"
-        }
-    } 
-    else 
-    {
-        tipo_triangulo.textContent = "O triângulo não pode ser formado"
-    }
-}
-    var outResultado = document.getElementById ("outResultado")
-    outResultado.addEventListener ("click" , funcao_triangulo) 
-          /*/
-//criar referências ao elemento da pagina
+//cria referências ao elemento da pagina
 const frm = document.querySelector("form");
 const resultado = document.querySelector("h3");
 const tipo_triangulo = document.querySelector("h4");
@@ -52,12 +13,14 @@ frm.addEventListener("submit",(e) => {
     const lado2 = Number(frm.invalorB.value)
     const lado3 = Number(frm.invalorC.value)
 
+    //if se o trinaglo existir
     if (lado3 < (lado1+lado2) && lado2 < (lado1+lado3) && lado1 < (lado2+lado3)) 
     {
         resultado.innerText = `O triângulo pode ser formado!`;
         //cor gold
         resultado.style.color="#FFD700";
         
+        //
         if (lado1 == lado2 && lado2 == lado3) 
         {
             
@@ -78,6 +41,7 @@ frm.addEventListener("submit",(e) => {
             tipo_triangulo.style.color="green"
         }
     } 
+    //Caso o triangulo não exista imprimir a mensagem a seguir
     else 
     {
         resultado.innerText = `O triângulo não pode ser formado...`;
