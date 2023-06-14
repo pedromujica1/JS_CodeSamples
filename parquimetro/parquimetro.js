@@ -14,25 +14,25 @@ frm.addEventListener("submit",(e) => {
 
     //Obter os valores digitados
     const moedas = Number(frm.inMoedas.value)
-    const troco_30min = moedas - 1
+    const troco_30min = moedas - 1.00
     const troco_60min = moedas - 1.75
-    const troco_120min = moedas - 3
+    const troco_120min = moedas - 3.00
     
     if (moedas < 1) 
     {
-        tempo.innerText=`Valor R$ ${moedas.toFixed(2)} insuficiente!`
+        tempo.innerText=`Valor R$ --- ${moedas.toFixed(2)} insuficiente!`
     } 
     //Caso o triangulo não exista imprimir a mensagem a seguir
     else 
     {
-        if (moedas => 1 && (moedas < 1.75)) 
+        if ((moedas >= 1) && (moedas < 1.75)) 
         {
             
             tempo.innerText=`Valor R$ ${moedas.toFixed(2)} suficiente, 30 minutos`
             
             troco.innerText=`Valor do troco ${troco_30min.toFixed(2)}`
         }
-        if (moedas => 1.75 && (moedas < 3)) 
+        if (moedas >= 1.75 && (moedas < 3)) 
         {
             
             tempo.innerText=`Valor R$ ${moedas.toFixed(2)} suficiente, 60 minutos`
