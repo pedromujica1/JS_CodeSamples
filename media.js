@@ -18,7 +18,6 @@ frm.addEventListener("submit",(e) => {
 
     console.log(media);
 
-    name_display.innerText=`Aluno: ${nome}`
     resp1.innerText=`Média das Notas ${media.toFixed(2)}`;
     
     if (media >= 7) {
