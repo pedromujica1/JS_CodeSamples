@@ -20,22 +20,25 @@ frm.addEventListener("submit",(e) => {
         //cor gold
         resultado.style.color="#FFD700";
         
-        //
+        //caso todos sejam iguais = equilatero
         if (lado1 == lado2 && lado2 == lado3) 
         {
             
             tipo_triangulo.innerText=`O triângulo é equilátero`
             tipo_triangulo.style.color="red"
 
-        } 
-        
+        }
+
+        //somente dois lados iguais
         else if (lado1 == lado2 || lado1== lado3 || lado3 == lado2) 
         
         {
             tipo_triangulo.innerText=`O triângulo é isósceles`
             tipo_triangulo.style.color="blue"
             
-        } else 
+        } 
+        //todos iguais
+        else 
         {
             tipo_triangulo.innerText=`O triângulo é escaleno`
             tipo_triangulo.style.color="green"
