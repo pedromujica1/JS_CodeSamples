@@ -16,7 +16,7 @@ frm.addEventListener("submit",(e) => {
     e.preventDefault()
     const num_romano = String(frm.inNumero.value).toUpperCase()
     
-    let contador_romano = [0,0,0,0,0,0,0]
+
     let str_aux=""
     //maior numero romano
     //(MMMCMXCIX)
@@ -24,36 +24,36 @@ frm.addEventListener("submit",(e) => {
     for (let index = 0; index < num_romano.length; index++) {
         if (num_romano[index] == "I") {
             const numero = romanos.get("I")    
-            //contador_romano[0]= contador_romano[0]+ numero
+            
             str_aux = str_aux + `${String(numero)}.`
         }
         if (num_romano[index] == "V") {
             const numero = romanos.get("V")    
-            //contador_romano[1]= contador_romano[1]+ numero
+            
             str_aux = str_aux + `${String(numero)}.`
              
             
         }
         if (num_romano[index] == "X") {
             const numero = romanos.get("X")
-            //contador_romano[2]= contador_romano[2]+ numero 
+             
             str_aux = str_aux + `${String(numero)}.`
         }
         if (num_romano[index] == "L") {
             const numero = romanos.get("L")
-            //contador_romano[3]= contador_romano[3]+ numero
+        
             str_aux = str_aux + `${String(numero)}.`           
             
         }
         if (num_romano[index] == "C") {
             const numero = romanos.get("C")
-            //contador_romano[4]= contador_romano[4]+ numero 
+            
             
             str_aux = str_aux + `${String(numero)}.`
         }
         if (num_romano[index] == "D") {
             const numero = romanos.get("D")
-            //contador_romano[5]= contador_romano[5]+ numero
+            
             str_aux = str_aux + `${String(numero)}.`
 
             
@@ -73,32 +73,70 @@ frm.addEventListener("submit",(e) => {
     const numeros_dec = str_dec.map(str => parseInt(str));
     //filtra o Nan da array
     const decimaisFiltrados = numeros_dec.filter(valor => !isNaN(valor));
-    console.log(decimaisFiltrados)
-    //const 
-    let decimaisCertos=[]
-    let valor_ini = 0
+    let verificador =1;
+    
+    let soma =0
+    let numeros=[]
+    //let verificaNumeros=true
 
+    for (let index = 0; index < decimaisFiltrados.length; index++) {
+        if (decimaisFiltrados[index] == decimaisFiltrados[index+1]) {
+            verificador++;
+        }
+        if (decimaisFiltrados[index] > decimaisFiltrados[index+1]){
+            let soma_correta = decimaisFiltrados[index]+ decimaisFiltrados[index+1]
+            numeros.push(soma_correta)
+            verificaNumeros = false
+
+        }
 
         
-    console.log(valor_final)
-    //console.log(decimaisCertos)
+    }
+    console.log(verificador)
+    if (verificador == decimaisFiltrados.length){
+        for (let index = 0; index < decimaisFiltrados.length; index++) {
+            soma+=decimaisFiltrados[index]
+            numeros.push(soma)
+            
+            
+        }
+    }
+    if (verificador !== decimaisFiltrados.length){
+        for (let index = 0; index < decimaisFiltrados.length; index++) {
+        
+            if (decimaisFiltrados[index] >= decimaisFiltrados[index+1]){
+                
+                
+                
+                soma = soma + decimaisFiltrados[index+1]
+                numeros.push(soma)
+    
+            }
+            
+            else if (decimaisFiltrados[index] < decimaisFiltrados[index+1]){
+                
+                let inversao = decimaisFiltrados[index+1] - decimaisFiltrados[index]
+                soma = soma + inversao
+                numeros.push(soma)
+    
+            }
+            
+    
+            
+        }
+
+    }
+
+    console.log(soma)
+    console.log(numeros)
+    //console.log(decimaisFiltrados)
+
     
     
 
     
 })
 
-/*for (let index = 1; index < decimaisFiltrados.length; index++) {
-        if (decimaisFiltrados[index] > decimaisFiltrados[index-1]) {
-            let inversao = decimaisFiltrados[index] - decimaisFiltrados[index-1]
-            valor_final = valor_final + inversao
-            decimaisCertos.push(inversao)
-        }
-        if (valor_final > decimaisFiltrados[index+1]){
-            valor_final = valor_final + decimaisFiltrados[index+1]
-            
-        }
-    }*/
 
 /*
     //Obter os valores digitados
