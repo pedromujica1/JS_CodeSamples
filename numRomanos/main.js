@@ -74,20 +74,11 @@ frm.addEventListener("submit",(e) => {
     //filtra o Nan da array
     const decimaisFiltrados = numeros_dec.filter(valor => !isNaN(valor));
     console.log(decimaisFiltrados)
+    //const 
     let decimaisCertos=[]
-    let valor_final = 0
+    let valor_ini = 0
 
-    for (let index = 1; index < decimaisFiltrados.length; index++) {
-        if (decimaisFiltrados[index] > decimaisFiltrados[index-1]) {
-            let inversao = decimaisFiltrados[index] - decimaisFiltrados[index-1]
-            valor_final = valor_final + inversao
-            decimaisCertos.push(inversao)
-        }
-        if (valor_final > decimaisFiltrados[index+1]){
-            valor_final = valor_final + decimaisFiltrados[index+1]
-            
-        }
-    }
+
         
     console.log(valor_final)
     //console.log(decimaisCertos)
@@ -97,19 +88,17 @@ frm.addEventListener("submit",(e) => {
     
 })
 
-/**switch (romanosArray[index]) {
-
+/*for (let index = 1; index < decimaisFiltrados.length; index++) {
+        if (decimaisFiltrados[index] > decimaisFiltrados[index-1]) {
+            let inversao = decimaisFiltrados[index] - decimaisFiltrados[index-1]
+            valor_final = valor_final + inversao
+            decimaisCertos.push(inversao)
+        }
+        if (valor_final > decimaisFiltrados[index+1]){
+            valor_final = valor_final + decimaisFiltrados[index+1]
             
-            case "C":
-                const numeroC = romanos.get("C")
-                numeros_romano[4]+=numeroC
-            case "D":
-                const numeroD = romanos.get("D")
-                numeros_romano[5]+=numeroD 
-            case "M":
-                const numeroM = romanos.get("M")
-                numeros_romano[6]+=numeroM    
-        } */
+        }
+    }*/
 
 /*
     //Obter os valores digitados
