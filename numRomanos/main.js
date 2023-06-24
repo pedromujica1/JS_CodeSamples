@@ -83,12 +83,7 @@ frm.addEventListener("submit",(e) => {
         if (decimaisFiltrados[index] == decimaisFiltrados[index+1]) {
             verificador++;
         }
-        if (decimaisFiltrados[index] > decimaisFiltrados[index+1]){
-            let soma_correta = decimaisFiltrados[index]+ decimaisFiltrados[index+1]
-            numeros.push(soma_correta)
-            verificaNumeros = false
-
-        }
+        
 
         
     }
