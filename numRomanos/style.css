@@ -1,0 +1,26 @@
+h1{
+    font-weight: bolder;
+    text-align: center;
+    border-bottom-style: inset;
+    color:	#0000CD;
+    
+}
+form{
+    text-align: center;
+}
+h3{
+    font-weight: bolder;
+    color: green;
+    text-align: center;
+    
+}
+h4{
+    font-weight: bolder;
+    color: gold;
+}
+img{
+    width: 550px;
+    height: 300px;
+    align-self: center;
+    
+}
