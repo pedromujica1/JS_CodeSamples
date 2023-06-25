@@ -9,7 +9,8 @@ const romanos = new Map([
     ["C", 100],
     ["D", 500],
     ["M", 1000]
-  ]);
+]);
+
 
 
 frm.addEventListener("submit",(e) => {
@@ -71,48 +72,34 @@ frm.addEventListener("submit",(e) => {
     const str_dec = str_aux.split(".")
     //transformar elementos em inteiros
     const numeros_dec = str_dec.map(str => parseInt(str));
-    //filtra o Not a Number da array e reverte 
-    let decimaisFiltrados = numeros_dec.filter(valor => !isNaN(valor)).reverse();
-    console.log(decimaisFiltrados)
-    
-    let soma =0
+    //filtra o Not a Number da array e reverte os valores da array 
+    let decimais = numeros_dec.filter(valor => !isNaN(valor)).reverse();
+    //variavel para receber soma dos valores atuais
+    let somaDec =0
+    //variavel para receber a subtração dos valores necessarios
     let sub = 0
-    let numeros_subtraidos=[]
-    let somaNums=[0,0]
-    let indiceIni = 0
-    let indiceFim=0
-    let verificaSub=false
-    let temp = [] 
        
-    for (let index = 0; index < decimaisFiltrados.length; index++) {
+    for (let index = 0; index < decimais.length; index++) {
         
-        if (decimaisFiltrados[index] > decimaisFiltrados[index+1]  ) {
+        if (decimais[index] > decimais[index+1]  ) {
             //pega o menor algarismo romano e diminui pelo maior algarismo romano
             //ex: IX = 10-1 = 9
-            sub = decimaisFiltrados[index] - (decimaisFiltrados[index+1]);
-            decimaisFiltrados[index] = sub
-            decimaisFiltrados[index+1] = 0
-
-            numeros_subtraidos.push(sub)
-            //salva indice em que os números só precisam ser somados
-            indiceIni =(indiceIni+  decimaisFiltrados.indexOf(decimaisFiltrados[index]))
-            indiceFim =(indiceFim+ decimaisFiltrados.indexOf(decimaisFiltrados[index+1]))
-            //numeros_subtraidos.push(decimaisFiltrados[index], decimaisFiltrados[index+1])*/
-            
-
-            
+            sub = decimais[index] - (decimais[index+1]);
+            //atualiza o valor da array decimais com o valor da subtração
+            decimais[index] = sub
+            //define segundo valor da subtração como 0 para não influenciar na soma total da array
+            decimais[index+1] = 0            
         }  
         
     }
         
-    console.log(decimaisFiltrados)
-    for (var i = 0; i<decimaisFiltrados.length;i++){
-        soma+=decimaisFiltrados[i]
+    console.log(decimais)
+    //laço para percorrer a lista reconfigurada e armazenar a soma dos valores na variavel somaDec
+    for (var i = 0; i<decimais.length;i++){
+        somaDec+=decimais[i]
     }
-    resp.innerText=`Número em decimal: ${soma}`
+    resp.innerText=`Número em decimal: ${somaDec}`
 
 
-   
-    
 })
 
