@@ -1,6 +1,7 @@
 //criar referências ao elemento da pagina
 const frm = document.querySelector("form");
 const resp = document.querySelector("h3");
+const respErro = document.querySelector("h4")
 const romanos = new Map([
     ["I", 1],
     ["V", 5],
@@ -10,18 +11,22 @@ const romanos = new Map([
     ["D", 500],
     ["M", 1000]
 ]);
-
+//maior numero romano (MMMCMXCIX) 3999
+//XLVII (47)
+//XIX (19)
+//IV (4)
+//XLIX (49)
 
 
 frm.addEventListener("submit",(e) => {
     e.preventDefault()
     //transforma entrada em String em caixa alta
     const num_romano = String(frm.inNumero.value).toUpperCase()
+
     //armazena valor romano convertido para decimal
     let str_aux=""
-    //maior numero romano
-    //(MMMCMXCIX)
-    
+
+
     for (let index = 0; index < num_romano.length; index++) {
         //blocos de condiçôes para pegar os valores dos algarismos romanos
         if (num_romano[index] == "I") {
@@ -98,8 +103,7 @@ frm.addEventListener("submit",(e) => {
     for (var i = 0; i<decimais.length;i++){
         somaDec+=decimais[i]
     }
+    console.log(somaDec)
+    //display no html
     resp.innerText=`Número em decimal: ${somaDec}`
-
-
 })
-
