@@ -1,3 +1,3 @@
 ## Revisão JS
-Revisão Javascript.
+Javascript code examples.
 
