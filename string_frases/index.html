@@ -7,31 +7,29 @@
     <link rel="stylesheet" href="style.css">
     <title>Frases JS</title>
 </head>
-<body>
-    <h2>Frases JS </h2>
-    <form>
-       
-        <p></p>
-        <h6>Adicione ; para determinar o fim da frase</h6>
-        <p></p>
-    
-        <input class="form-control col-sm-3" type="text" placeholder="Insira a frase" id="inFrase" required>
-        <p></p>
-        <input class="form-control col-sm-3" type="text" placeholder="Insira a nova palavra" id="inPalavra" required>
-        <p></p>
-        <input class="form-control col-sm-3" type="text" placeholder="Posições da nova palavra" id="inPosicoes" required>
-        <p></p>
-        
-        <p>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2 class="text-center text-success">Frases JS</h2>
+        <form class="mt-4">
+            <div class="form-group">
+                <h6>Adicione ";" para determinar o fim da frase</h6>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Insira a frase" id="inFrase" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Insira a nova palavra" id="inPalavra" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Posições da nova palavra" id="inPosicoes" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-block">Formar frase</button>
+            </div>
+            <h3 class="text-center mt-4"></h3>
+        </form>
+    </div>
 
-        </p>
-        <button type="submit" class="btn btn-success">Formar frase</button>
-        
-        <h3></h3>
-    </form>
-    
-    
     <script src="strings.js"></script>
-    
 </body>
 </html>
